@@ -3,8 +3,8 @@ package br.com.fagner.libraryapp.modelo;
 public class Livro {
 	private int id;
 	private String nome;
-	private String autor;
-	private String editora;
+	private Autor autor;
+	private Editora editora;
 	private String edicao;
 	private String adaptacao;
 	private String serie;
@@ -22,16 +22,16 @@ public class Livro {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getAutor() {
+	public Autor getAutor() {
 		return autor;
 	}
-	public void setAutor(String autor) {
+	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
-	public String getEditora() {
+	public Editora getEditora() {
 		return editora;
 	}
-	public void setEditora(String editora) {
+	public void setEditora(Editora editora) {
 		this.editora = editora;
 	}
 	public String getEdicao() {
