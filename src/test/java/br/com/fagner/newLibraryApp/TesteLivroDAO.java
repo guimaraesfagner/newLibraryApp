@@ -33,25 +33,19 @@ public class TesteLivroDAO {
 		livro.setAutor(autor);
 		livro.setEditora(editora);
 		
-		System.out.println(livro.getId());
-		System.out.println(livro.getNome());
-		System.out.println(livro.getAdaptacao());
-		System.out.println(livro.getEdicao());
-		System.out.println(livro.getQuantidade());
-		System.out.println(livro.getSerie());
-		System.out.println(livro.getAutor().getId());
-		System.out.println(livro.getEditora().getId());
-		
+	
 		//inserindo o usuário no banco
 		
 		LivroDAO livroDAO = new LivroDAO();
 		livroDAO.alterar(livro);
 		
-		System.out.println("Cadastrado com Sucesso #SQN");
+		System.out.println("Cadastrado com Sucesso");
 
 	}	
 	public static void testeInserir() {
+		
 		// Criando usuário (com sua editora e autor
+		
 		Editora editora = new Editora();
 		editora.setId(1);
 		editora.setNome("Recordsssss");
@@ -60,14 +54,12 @@ public class TesteLivroDAO {
 		autor.setNome("Fazedor de Livrossss");
 		Livro livro  = new Livro();
 		livro.setNome("TesteNomesss");
-		livro.setEdicao("Terceira Ediçaossss");
+		livro.setEdicao("TerceiraEdicaossss");
 		livro.setAdaptacao("Cagueissss");
 		livro.setQuantidade(1);
 		livro.setSerie("serie");
 		livro.setEditora(editora);
 		livro.setAutor(autor);
-		
-		
 		
 		//inserindo o usuário no banco
 		

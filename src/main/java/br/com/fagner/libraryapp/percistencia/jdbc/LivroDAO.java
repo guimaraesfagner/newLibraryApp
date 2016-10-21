@@ -16,19 +16,19 @@ public class LivroDAO {
 				   + "insert into editora (editora_nome) values (?); "
 				   + "insert into autor (autor_nome) values (?)";
 			
-		try (PreparedStatement preparador = con.prepareStatement(sql)){
+		try (PreparedStatement ps = con.prepareStatement(sql)){
 		
 		//Criando um Statement
-		preparador.setString(1, livro.getNome());
-		preparador.setString(2, livro.getEdicao());
-		preparador.setString(3, livro.getAdaptacao());
-		preparador.setInt(4, livro.getQuantidade());
-		preparador.setString(5, livro.getSerie());
-		preparador.setInt(6, livro.getEditora().getId());
-		preparador.setInt(7, livro.getAutor().getId());
+		ps.setString(1, livro.getNome());
+		ps.setString(2, livro.getEdicao());
+		ps.setString(3, livro.getAdaptacao());
+		ps.setInt(4, livro.getQuantidade());
+		ps.setString(5, livro.getSerie());
+		ps.setInt(6, livro.getEditora().getId());
+		ps.setInt(7, livro.getAutor().getId());
 		
 			//Executa SQL no banco
-		preparador.execute();
+		ps.execute();
 		
 		} catch (SQLException e) {
 	
@@ -38,25 +38,36 @@ public class LivroDAO {
 
 	public void alterar(Livro livro) {
 		
+		System.out.println(livro.getId());
+		System.out.println(livro.getNome());
+		System.out.println(livro.getAdaptacao());
+		System.out.println(livro.getEdicao());
+		System.out.println(livro.getQuantidade());
+		System.out.println(livro.getSerie());
+		System.out.println(livro.getAutor().getId());
+		System.out.println(livro.getEditora().getId());
 		
-		String sql = "update livro set livro_nome='?', livro_edicao='?', "
-				+ "livro_adaptacao='?', livro_quantidade=?, "
-				+ "livro_serie='?', editora_id=?, autor_id=? where livro_id=?";
 		
-		try (PreparedStatement preparador = con.prepareStatement(sql)){
+		String sql = "update livro set livro_nome=?, livro_edicao=?, "
+				+ "livro_adaptacao=?, livro_quantidade=?, "
+				+ "livro_serie=?, editora_id=?, autor_id=? where livro_id=?";
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
 			//Criando um Statement
 		
-		preparador.setString(1, livro.getNome());
-		preparador.setString(2, livro.getEdicao());
-		preparador.setString(3, livro.getAdaptacao());
-		preparador.setInt(4, livro.getQuantidade());
-    	preparador.setString(5, livro.getSerie());
-		preparador.setInt(6, livro.getEditora().getId());
-		preparador.setInt(7, livro.getAutor().getId());
-		preparador.setInt(8, livro.getId());
+		ps.setString(1, livro.getNome());
+		ps.setString(2, livro.getEdicao());
+		ps.setString(3, livro.getAdaptacao());
+		ps.setInt(4, livro.getQuantidade());
+    	ps.setString(5, livro.getSerie());
+		ps.setInt(6, livro.getEditora().getId());
+		ps.setInt(7, livro.getAutor().getId());
+		ps.setInt(8, livro.getId());
 		
 		//Executa SQL no banco
-		preparador.executeUpdate();
+		ps.execute();
+		ps.close();
 		
 		} catch (SQLException e) {
 	
