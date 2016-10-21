@@ -1,14 +1,14 @@
-package br.com.fagner.libraryapp.modelo;
+package br.com.fagner.libraryapp.percistencia.entidade;
 
 public class Livro {
 	private int id;
 	private String nome;
-	private Autor autor;
-	private Editora editora;
 	private String edicao;
 	private String adaptacao;
-	private String serie;
 	private int quantidade;
+	private Editora editora;
+	private Autor autor;
+	private String serie;
 	
 	public int getId() {
 		return id;
@@ -22,18 +22,6 @@ public class Livro {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Autor getAutor() {
-		return autor;
-	}
-	public void setAutor(Autor autor) {
-		this.autor = autor;
-	}
-	public Editora getEditora() {
-		return editora;
-	}
-	public void setEditora(Editora editora) {
-		this.editora = editora;
-	}
 	public String getEdicao() {
 		return edicao;
 	}
@@ -46,12 +34,6 @@ public class Livro {
 	public void setAdaptacao(String adaptacao) {
 		this.adaptacao = adaptacao;
 	}
-	public String getSerie() {
-		return serie;
-	}
-	public void setSerie(String serie) {
-		this.serie = serie;
-	}
 	public int getQuantidade() {
 		return quantidade;
 	}
@@ -59,4 +41,29 @@ public class Livro {
 		this.quantidade = quantidade;
 	}
 	
-}
+	public Editora getEditora() {
+		return editora;
+	}
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	
+	}
+	
+	public Autor getAutor() {
+		return autor;
+	}
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+	public String getSerie() {
+		return serie;
+	}
+	public void setSerie(String serie) {
+		this.serie = serie;
+	}
+			
+	
+	
+		}
+	
+

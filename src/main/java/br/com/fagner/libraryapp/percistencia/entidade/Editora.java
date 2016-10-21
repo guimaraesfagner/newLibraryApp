@@ -1,4 +1,4 @@
-package br.com.fagner.libraryapp.modelo;
+package br.com.fagner.libraryapp.percistencia.entidade;
 
 public class Editora {
  private int id;
