@@ -17,6 +17,11 @@ public String getNome() {
 public void setNome(String nome) {
 	this.nome = nome;
 }
+
+@Override
+public String toString() {
+	return "Editora [id=" + id + ", nome=" + nome + "]";
+}
  
  
 }

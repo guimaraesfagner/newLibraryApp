@@ -1,7 +1,7 @@
 package br.com.fagner.libraryapp.percistencia.entidade;
 
 public class Livro {
-	private int id;
+	private Integer id;
 	private String nome;
 	private String edicao;
 	private String adaptacao;
@@ -10,10 +10,10 @@ public class Livro {
 	private Autor autor;
 	private String serie;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -60,6 +60,12 @@ public class Livro {
 	}
 	public void setSerie(String serie) {
 		this.serie = serie;
+	}
+	
+	@Override
+	public String toString() {
+		return "Livro [id=" + id + ", nome=" + nome + ", edicao=" + edicao + ", adaptacao=" + adaptacao
+				+ ", quantidade=" + quantidade + ", editora=" + editora + ", autor=" + autor + ", serie=" + serie + "]";
 	}
 			
 	
